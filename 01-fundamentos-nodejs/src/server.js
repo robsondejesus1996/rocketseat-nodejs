@@ -2,7 +2,7 @@ import http from 'node:http'
 
 //requisição e responsta
 const server = http.createServer((req, res) =>{
-    return res.end('Hello world')
+    return res.end('Olá mundo')
 })
 
 
