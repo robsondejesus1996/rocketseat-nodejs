@@ -6,16 +6,27 @@ import http from 'node:http'
 // PATCH => ATUALIZAR UMA INFORMAÇÃO ÚNICA OU ESPECÍFICA NO BACK-END 
 // DELETE => DELETAR UM RECURSO DO BACK-END
 
+const users = []
+
 //requisição e responsta
 const server = http.createServer((req, res) =>{
 
     const { method, url } = req
 
     if(method === 'GET' && url === '/users'){
-        return res.end('Listagem de users')
+        return res
+        .setHeader('Content-type', 'applications/json')
+        .end(JSON.stringify(users))
     }
 
     if(method === 'POST' && url === '/users'){
+        users.push({
+            id: 1,
+            name: 'John Doe',
+            email: 'john@hotmail.com',
+
+        })
+
         return res.end('Criação de Usuários')
     }
 
