@@ -20,14 +20,14 @@ const server = http.createServer((req, res) =>{
     }
 
     if(method === 'POST' && url === '/users'){
+        
         users.push({
-            id: 1,
-            name: 'John Doe',
-            email: 'john@hotmail.com',
-
+            id: 2,
+            name: 'Robson de Jesus',
+            email: 'robson@hotmail.com',
         })
 
-        return res.writeHead(201).end()
+        return res.writeHead(201).end('Usuário Criado')
     }
 
 
